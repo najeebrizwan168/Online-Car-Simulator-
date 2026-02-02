@@ -4,5 +4,9 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
+/[Uu]sers/
+.vs/
+.gradle/
 *.csproj
+*.unitypackage
 *.sln
