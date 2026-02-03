@@ -2,34 +2,28 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform player;      // Drag your McLaren here
-    public Vector3 offset = new Vector3(0, 2, -5); // Default height and distance
-    public float speed = 5f;      // How smoothly the camera follows
+    public Transform target;
+    public Vector3 offset = new Vector3(0, 3, -7); // Adjusted for a better racing view
+    public float smoothTime = 0.05f;
 
-    private Rigidbody playerRB;
+    private Vector3 currentVelocity = Vector3.zero;
 
-    void Start()
+    public void SetTarget(Transform newTarget)
     {
-        if (player != null)
-        {
-            playerRB = player.GetComponent<Rigidbody>();
-        }
+        target = newTarget;
     }
 
     void LateUpdate()
     {
-        if (player == null || playerRB == null) return;
+        if (target == null) return;
 
-        // Calculate the direction the car is moving or facing
-        Vector3 playerForward = (playerRB.velocity.normalized + player.transform.forward).normalized;
+        // Follow the car's visual position directly
+        Vector3 targetPosition = target.position + target.TransformDirection(offset);
 
-        // Determine the target position based on the car's position, rotation, and your offset
-        Vector3 targetPosition = player.position + player.transform.TransformVector(offset);
+        // SmoothDamp is the key to stopping the jitter at high speeds
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime);
 
-        // Smoothly move the camera to that target position
-        transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
-
-        // Always keep the camera looking at the car
-        transform.LookAt(player);
+        // Look at the car
+        transform.LookAt(target.position + Vector3.up);
     }
 }

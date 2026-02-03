@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|d:\\g\\multiplayer\\assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|d:\\g\\multiplayer\\assets\\script\\networkcarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\networkcarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|d:\\g\\multiplayer\\assets\\script\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|D:\\g\\Multiplayer\\assets\\script\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|D:\\g\\Multiplayer\\assets\\script\\mclarenspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mclarenspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|D:\\g\\Multiplayer\\assets\\script\\simplespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D46A65ED-87AD-D2D3-0493-4CF8807E7B5A}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\simplespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +34,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarController.cs",
+              "DocumentMoniker": "D:\\g\\Multiplayer\\Assets\\Script\\CarController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CarController.cs",
+              "ToolTip": "D:\\g\\Multiplayer\\Assets\\Script\\CarController.cs",
+              "RelativeToolTip": "Assets\\Script\\CarController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:07:45.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NetworkCarController.cs",
+              "DocumentMoniker": "D:\\g\\Multiplayer\\Assets\\Script\\NetworkCarController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\NetworkCarController.cs",
+              "ToolTip": "D:\\g\\Multiplayer\\Assets\\Script\\NetworkCarController.cs",
+              "RelativeToolTip": "Assets\\Script\\NetworkCarController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T16:20:52.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "McLarenSpawner.cs",
+              "DocumentMoniker": "D:\\g\\Multiplayer\\Assets\\Script\\McLarenSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\McLarenSpawner.cs",
+              "ToolTip": "D:\\g\\Multiplayer\\Assets\\Script\\McLarenSpawner.cs",
+              "RelativeToolTip": "Assets\\Script\\McLarenSpawner.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:59:18.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SimpleSpawner.cs",
+              "DocumentMoniker": "D:\\g\\Multiplayer\\Assets\\Script\\SimpleSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\SimpleSpawner.cs",
+              "ToolTip": "D:\\g\\Multiplayer\\Assets\\Script\\SimpleSpawner.cs",
+              "RelativeToolTip": "Assets\\Script\\SimpleSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:52:32.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Spawner.cs",
+              "DocumentMoniker": "D:\\g\\Multiplayer\\Assets\\Script\\Spawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Spawner.cs",
+              "ToolTip": "D:\\g\\Multiplayer\\Assets\\Script\\Spawner.cs",
+              "RelativeToolTip": "Assets\\Script\\Spawner.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA8wBcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:26:26.048Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +108,7 @@
               "RelativeDocumentMoniker": "Assets\\Script\\CameraController.cs",
               "ToolTip": "D:\\g\\Multiplayer\\Assets\\Script\\CameraController.cs",
               "RelativeToolTip": "Assets\\Script\\CameraController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T13:40:46.024Z",
               "EditorCaption": ""

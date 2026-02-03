@@ -1,3 +1,4 @@
+using Fusion;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -10,75 +11,75 @@ public class WheelData
     public bool isMotorized;
 }
 
-public class CarController : MonoBehaviour
+public class CarController : NetworkBehaviour
 {
     [Header("Settings")]
-    public float motorForce = 1500f;
+    public float motorForce = 2000f;
     public float brakeForce = 3000f;
     public float maxSteerAngle = 30f;
 
     [Header("Wheels")]
     public List<WheelData> wheels;
 
-    private float horizontalInput;
-    private float verticalInput;
-    private bool isBraking;
+    // Use Networked properties so everyone stays in sync
+    [Networked] private float horizontalInput { get; set; }
+    [Networked] private float verticalInput { get; set; }
+    [Networked] private NetworkBool isBraking { get; set; }
 
-    void Update()
+    public override void Spawned()
     {
-        GetInput();
-        UpdateWheels();
-    }
-
-    void FixedUpdate()
-    {
-        HandleMotor();
-        HandleSteering();
-    }
-
-    private void GetInput()
-    {
-        horizontalInput = Input.GetAxis("Horizontal"); // A, D or Left, Right
-        verticalInput = Input.GetAxis("Vertical");     // W, S or Up, Down
-        isBraking = Input.GetKey(KeyCode.Space);
-    }
-
-    private void HandleMotor()
-    {
-        float currentBrakeForce = isBraking ? brakeForce : 0f;
-
-        foreach (var wheel in wheels)
+        // Automatically tell the camera to follow THIS car if it belongs to us
+        if (HasInputAuthority)
         {
-            if (wheel.isMotorized)
-            {
-                wheel.collider.motorTorque = verticalInput * motorForce;
-            }
-            wheel.collider.brakeTorque = currentBrakeForce;
+            CameraController cam = Camera.main.GetComponent<CameraController>();
+            if (cam != null) cam.SetTarget(this.transform);
         }
     }
 
-    private void HandleSteering()
+    public override void FixedUpdateNetwork()
     {
-        float steerAngle = horizontalInput * maxSteerAngle;
+        if (HasInputAuthority)
+        {
+            // Gather input every network tick
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+            isBraking = Input.GetKey(KeyCode.Space);
+        }
+
+        // Apply physics in the network loop (fixes the jitter)
+        ApplyMotor();
+        ApplySteering();
+
+        // Update wheel visual rotation/position
+        UpdateWheelVisuals();
+    }
+
+    private void ApplyMotor()
+    {
+        float brake = isBraking ? brakeForce : 0f;
         foreach (var wheel in wheels)
         {
-            if (wheel.isSteerable)
-            {
-                wheel.collider.steerAngle = steerAngle;
-            }
+            if (wheel.isMotorized) wheel.collider.motorTorque = verticalInput * motorForce;
+            wheel.collider.brakeTorque = brake;
         }
     }
 
-    private void UpdateWheels()
+    private void ApplySteering()
+    {
+        float steer = horizontalInput * maxSteerAngle;
+        foreach (var wheel in wheels)
+        {
+            if (wheel.isSteerable) wheel.collider.steerAngle = steer;
+        }
+    }
+
+    private void UpdateWheelVisuals()
     {
         foreach (var wheel in wheels)
         {
             Vector3 pos;
             Quaternion rot;
-            // This grabs the physics position/rotation from the collider
             wheel.collider.GetWorldPose(out pos, out rot);
-
-            // This applies it to your 3D mesh
             wheel.mesh.position = pos;
             wheel.mesh.rotation = rot;
         }
